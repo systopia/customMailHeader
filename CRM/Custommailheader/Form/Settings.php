@@ -28,6 +28,7 @@ class CRM_Custommailheader_Form_Settings extends CRM_Core_Form {
       'text',
       'extra_mail_header',
       E::ts('Extra Mail Header'),
+      array("class" => "huge"),
       FALSE
     );
     $this->addButtons(array(
@@ -39,12 +40,22 @@ class CRM_Custommailheader_Form_Settings extends CRM_Core_Form {
     ));
 
     // export form elements
-    $this->assign('elementNames', $this->getRenderableElementNames());
     parent::buildQuickForm();
   }
 
+  /**
+   * set the default (=current) values in the form
+   */
+  public function setDefaultValues() {
+    $config = CRM_Custommailheader_Config::singleton();
+    return $config->getSettings();
+  }
+
+  /**
+   * Post process input values and save them to DB
+   */
   public function postProcess() {
-    $config = CRM_Bpk_Config::singleton();
+    $config = CRM_Custommailheader_Config::singleton();
     $values = $this->exportValues();
     $config->setSettings($values);
     parent::postProcess();

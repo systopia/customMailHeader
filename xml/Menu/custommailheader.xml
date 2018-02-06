@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
 <menu>
   <item>
-  <item>
     <path>civicrm/admin/setting/customMailHeader</path>
     <page_callback>CRM_Custommailheader_Form_Settings</page_callback>
-    <title>Settings</title>
+    <title>Custom Mailer Settings</title>
     <access_arguments>access CiviCRM</access_arguments>
   </item>
 </menu>
