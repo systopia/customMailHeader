@@ -5,5 +5,7 @@
     <page_callback>CRM_Custommailheader_Form_Settings</page_callback>
     <title>Custom Mailer Settings</title>
     <access_arguments>access CiviCRM</access_arguments>
+    <adminGroup>CiviMail</adminGroup>
+    <icon>admin/import_export_map.png</icon>
   </item>
 </menu>
