@@ -26,7 +26,13 @@ class CRM_Custommailheader_InjectHeader {
    * @param $context
    */
   static function inject_header(&$params, $context) {
-
+    // do this only for civi mail for now
+    if ($context != 'civimail') {
+      return;
+    }
+    $config = CRM_Custommailheader_Config::singleton();
+    $settings = $config->getSettings();
+    array_push($params['headers'], $settings);
   }
 
 }
