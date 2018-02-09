@@ -2,7 +2,7 @@
 <extension key="de.systopia.custommailheader" type="module">
   <file>custommailheader</file>
   <name>Custom Mail Header</name>
-  <description>Small extension that adds custom Fields to Mails send by CiviCRM. header can be configured by a configuration form.</description>
+  <description>Small extension that adds a custom Field to Mails send by CiviCRM. The Header can be configured by a small configuration form.</description>
   <license>AGPL-3.0</license>
   <maintainer>
     <author>Philipp Batroff</author>
@@ -20,7 +20,7 @@
   <compatibility>
     <ver>4.7</ver>
   </compatibility>
-  <comments>First shot at a custom mail header extension</comments>
+  <comments>Small and Simple Extension to add a Custom Mail Header in CiviCRM</comments>
   <civix>
     <namespace>CRM/Custommailheader</namespace>
   </civix>
