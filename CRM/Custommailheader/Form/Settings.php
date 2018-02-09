@@ -26,11 +26,21 @@ class CRM_Custommailheader_Form_Settings extends CRM_Core_Form {
     // add form elements
     $this->add(
       'text',
-      'extra_mail_header',
-      E::ts('Extra Mail Header'),
+      'extra_mail_header_key',
+      E::ts('Extra Mail Header Key'),
       array("class" => "huge"),
       FALSE
     );
+
+    $this->add(
+      'text',
+      'extra_mail_header_value',
+      E::ts('Extra Mail Header Eintrag'),
+      array("class" => "huge"),
+      FALSE
+    );
+
+    // submit
     $this->addButtons(array(
       array(
         'type' => 'submit',
@@ -41,6 +51,18 @@ class CRM_Custommailheader_Form_Settings extends CRM_Core_Form {
 
     // export form elements
     parent::buildQuickForm();
+  }
+
+  /**
+   * get the elements of the form
+   * used as a filter for the values array from post Process
+   * @return array
+   */
+  protected function getSettingsInForm() {
+    return array(
+      'extra_mail_header_key',
+      'extra_mail_header_value',
+    );
   }
 
   /**
@@ -57,7 +79,14 @@ class CRM_Custommailheader_Form_Settings extends CRM_Core_Form {
   public function postProcess() {
     $config = CRM_Custommailheader_Config::singleton();
     $values = $this->exportValues();
-    $config->setSettings($values);
+    $settings = $config->getSettings();
+    $settings_in_form = $this->getSettingsInForm();
+    foreach ($settings_in_form as $name) {
+      if (isset($values[$name])) {
+        $settings[$name] = $values[$name];
+      }
+    }
+    $config->setSettings($settings);
     parent::postProcess();
   }
 

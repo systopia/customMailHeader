@@ -16,8 +16,13 @@
 
 <div class="crm-section bpk bpk-custommailheader">
   <div class="crm-section">
-    <div class="label">{$form.extra_mail_header.label}</div>
-    <div class="content">{$form.extra_mail_header.html}</div>
+    <div class="label">{$form.extra_mail_header_key.label}</div>
+    <div class="content">{$form.extra_mail_header_key.html}</div>
+    <div class="clear"></div>
+  </div>
+  <div class="crm-section">
+    <div class="label">{$form.extra_mail_header_value.label}</div>
+    <div class="content">{$form.extra_mail_header_value.html}</div>
     <div class="clear"></div>
   </div>
 
