@@ -33,21 +33,21 @@ class CRM_Custommailheader_Config {
   }
 
   /**
-   * get bPK settings
+   * get custommailheader settings
    *
    * @return array
    */
   public function getSettings() {
-    $settings = CRM_Core_BAO_Setting::getItem('de.systopia.customMailHeader', 'custommailheader_settings');
+    $settings = CRM_Core_BAO_Setting::getItem('de.systopia.custommailheader', 'customMailHeader_settings');
     return $settings;
   }
 
   /**
-   * set bPK settings
+   * set custommailheader settings
    *
    * @param $settings array
    */
   public function setSettings($settings) {
-    CRM_Core_BAO_Setting::setItem($settings, 'de.systopia.custommailheader', 'custommailheader_settings');
+    CRM_Core_BAO_Setting::setItem($settings, 'de.systopia.custommailheader', 'customMailHeader_settings');
   }
 }
